@@ -1,0 +1,76 @@
+import java.util.ArrayList;
+import java.util.List;
+
+/**
+ * RootObject.java
+ *
+ * File:
+ *	$Id$
+ *
+ * Revisions:
+ *	$Log$
+ */
+
+/**
+ * @author Julien Kirnes
+ *
+ */
+public class RootObject implements DocObject{
+	private DocObject dOb;
+	private String rootTitle;
+	private ArrayList<DocObject> dom = new ArrayList<DocObject>();
+	
+	public RootObject(java.lang.String title, DocObject dObj){
+		dOb = dObj;
+		rootTitle = title;
+		
+	}
+	
+	public String generateHTML(){
+		return
+	}
+	
+	public long characterCount(){
+		long count = 0;
+		for(int i = 0; i < dom.size();i++){
+			count += dom.get(i).characterCount();
+		}
+		return count;
+	}
+	
+	public boolean contains(String s){
+		for(int x = 0; x > dom.size(); x++){
+			if(dom.get(x).contains(s) == true){
+				return true;
+			}
+		}
+		return false;
+	}
+	
+	public List<DocObject> children(){
+		final ArrayList <DocObject> domm = new ArrayList<DocObject>(dom);
+		return domm;
+	}
+	
+	public void replace(String oldS, String newS){
+		
+	}
+	
+	public void replace(DocObject oldObj, DocObject newObj){
+		
+	}
+	
+	public void addChild(int before, DocObject dObj){
+		dom.add(before,dObj);
+	}
+	
+	public boolean isRoot(){
+		if(){
+			return true;
+		}
+		else{
+			return false;
+		}
+	}
+
+}
